@@ -96,7 +96,7 @@ yarn build:prod-commit
 
 For development environments, we recommend working with a public tunnel to your localhost URL instead of committing your dev builds. With that setup, you don't have to commit the changes in order for them to go live. You simply make changes to the code in your file system, and then let Yarn rebuild it automatically. You just have to reload the Uniweb app linked to the collection whenever you want to see the results of your changes.
 
-> The latest version build of your code is available to the site via the public tunnel that you opened.
+> The latest build of your code is available to the site via the public tunnel that you opened.
 
 Follow the [instructions on working with a public tunnel](https://github.com/uniwebcms/uniweb-module-builder/blob/main/docs/localhost_tunnel.md) to set up a tunnel and develop locally with it.
 
