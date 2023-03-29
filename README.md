@@ -82,7 +82,7 @@ Make sure that the [Yarn package manager](https://yarnpkg.com/) is installed and
 yarn
 ```
 
-Before building, make sure that the `TARGET_COLLECTION` environment variable is set with the name of the collection that you want to build. You can write the setting in `.env` if you want to commit the change, or in `.env.local` if you want to be ignored in the commit (ideal when working with other team members working on different collections).
+Before building, make sure that the `TARGET_COLLECTION` environment variable is set with the name of the collection that you want to build. You can write the setting in `.env` if you want to commit the change, or in `.env.dev` if you want to be ignored in the commit (ideal when working with other team members working on different collections).
 
 You can build and commit a new distribution bundle by running the `build:prod-commit` action.
 
@@ -102,15 +102,15 @@ Follow the [instructions on working with a public tunnel](https://github.com/uni
 
 ## How to create a new Component Collection
 
-1. Create a folder under `src` with the name of the new **component collection**. e.g. `src/MarketingClassic`.
+1. Create a folder under `src` with the name of the new **component collection**. e.g. `src/AltComponents`.
 
-2. Create a `index.js` file and export all necessary components that the app may need in that file. For example, [src/MarketingClassic/index.js](./src/MarketingClassic/index.js)
+2. Create a `index.js` file and export all necessary components that the app may need in that file. For example, [src/AltComponents/index.js](./src/AltComponents/index.js)
 
-3. If your components are built with Tailwind css, place the `tailwind.config.js` file under the root folder of the target remote. For example, [src/MarketingClassic/tailwind.config.js](./src/MarketingClassic/tailwind.config.js). Import the default Tailwind css file in `index.js`. For example, [src/MarketingClassic/index.css](./src/MarketingClassic/index.css)
+3. Set `TARGET_COLLECTION=AltComponents` in `.env` (for prod), `.env.dev` (for dev), or in your Cloudflare project.
 
 ## Choosing between Tailwind and Twind for component CSS
 
 [Tailwind](https://tailwindcss.com/) is a CSS framework based on atomic utility classes. Tailwind classes are found and defined at build time and distributed as standard CSS. In contrast, [Twind](https://twind.dev/) is a tailwind-in-js CSS framework that defines the Tailwind utility classes at runtime when they are needed.
 
-Uniweb components support both approaches when building a component collection for Uniweb-made websites. However, when building App components for a Uniweb instance, the only valid option is Twind.
+Uniweb components support both approaches when building a component collection. However, when building App components for a Uniweb instance, the only valid option at this time is to use Twind.
 
